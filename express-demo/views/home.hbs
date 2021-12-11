@@ -1,0 +1,15 @@
+<h1>It's working</h1>
+
+{{#if user}}
+    <span>Name {{user.name}}</span><br>
+    <span>Age {{user.age}}</span><br>
+{{/if}}
+
+<h3>Items in pocket</h3>
+<ul>
+    {{#each items}}
+        {{> item}}
+    {{else}}
+    <li>No items</li>
+    {{/each}}
+</ul>

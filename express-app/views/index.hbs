@@ -1,0 +1,32 @@
+<h1>Browser</h1>
+<form action="/" method="GET">
+  <input type="text" class="search" name="search" placeholder="Search..." value="{{search}}">
+  <input type="number" name="from" class="difficulty" placeholder="Difficulty from..." value="{{from}}">
+  <span>-</span>
+  <input type="number" name="to" class="difficulty" placeholder="Difficulty to..." value="{{to}}">
+  <input type="submit" value="search">
+</form>
+
+<div class="cube-list">
+  {{#each cubes}}
+  <div class="cube">
+    <img class="cube" src="{{imageUrl}}">
+    <p class="name">{{name}}</p>
+    <p><span>Difficulty level:</span> {{difficulty}}</p>
+    <a class="btn" href="/details/{{id}}">Details</a>
+    <a class="btn" href="/edit/{{id}}">Edit</a>
+    <button class="btn more">See more</button>
+    
+    <div class="cube-description">
+      {{description}}
+    </div>
+  </div>
+
+
+  {{else}}
+  <span>No cubes in database</span>
+  {{/each}}
+</div>
+
+
+<script src="/js/app.js"></script>
